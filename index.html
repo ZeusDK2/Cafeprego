@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Prego – SunriseRP</title>
+  <style>
+    :root {
+      --primary-color: #2ecc71;
+      --secondary-color: #27ae60;
+      --text-color: #333;
+      --background-color: #faf7f2;
+      --font-family: 'Arial', sans-serif;
+      --max-width: 900px;
+      --padding: 2rem;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: var(--font-family);
+      margin: 0;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header, nav, footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      transition: var(--transition);
+    }
+
+    header img {
+      max-width: 180px;
+      transition: var(--transition);
+    }
+
+    header img:hover {
+      transform: scale(1.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: var(--secondary-color);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: white;
+      transform-origin: bottom right;
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+      z-index: 2;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      z-index: 2;
+      position: relative;
+      animation: fadeIn 2s ease-in-out 0.5s;
+    }
+
+    section {
+      padding: 3rem var(--padding);
+      max-width: var(--max-width);
+      margin: 2rem auto;
+    }
+
+    h2 {
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background: var(--secondary-color);
+      left: 0;
+      bottom: -5px;
+      transition: var(--transition);
+    }
+
+    h2:hover::after {
+      width: 100%;
+    }
+
+    .menu-category {
+      margin-bottom: 2rem;
+    }
+
+    .menu-item {
+      margin: 0.4rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    .menu-item:hover {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+    }
+
+    .menu-item span {
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/IBmxCKW.png" alt="Café Prego Logo">
+    <h1>Café Prego</h1>
+    <p>Autentisk italiensk restaurant på SunriseRP</p>
+  </header>
+
+  <nav>
+    <a href="#menu">Menukort</a>
+    <a href="#about">Om os</a>
+    <a href="#rp">SunriseRP</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
+  <div class="hero">
+    <h1>🍝 Velkommen til Café Prego</h1>
+    <p>Smagen af Italien midt i Los Santos – eksklusivt på SunriseRP</p>
+  </div>
+
+  <section id="menu">
+    <h2>🍽️ Menukort</h2>
+
+    <div class="menu-category">
+      <h3>Forretter 🥗</h3>
+      <p class="menu-item"><span>Bruschetta med tomat</span> – 59.99</p>
+      <p class="menu-item"><span>Carpaccio</span> – 89.99</p>
+      <p class="menu-item"><span>Caprese salat</span> – 79.99</p>
+      <p class="menu-item"><span>Focaccia</span> – 49.99</p>
+    </div>
+
+    <div class="menu-category">
+      <h3>Hovedretter 🍕</h3>
+      <p class="menu-item"><span>Pizza Margherita</span> – 499.99</p>
+      <p class="menu-item"><span>Tagliatelle Bolognese</span> – 599.99</p>
+      <p class="menu-item"><span>Lasagne al Forno</span> – 599.99</p>
+      <p class="menu-item"><span>Pizza Diavola</span> – 559.99</p>
+    </div>
+
+    <div class="menu-category">
+      <h3>Pablo's Favoritter ⭐</h3>
+      <p class="menu-item"><span>Spaghetti Carbonara</span> – 699.99</p>
+      <p class="menu-item"><span>Grilled Calamari</span> – 599.99</p>
+      <p class="menu-item"><span>Spaghetti Con Polpette</span> – 599.99</p>
+      <p class="menu-item"><span>Gamberoni alla Griglia</span> – 499.99</p>
+    </div>
+
+    <div class="menu-category">
+      <h3>Desserter 🍰</h3>
+      <p class="menu-item"><span>Tiramisu</span> – 159.99</p>
+      <p class="menu-item"><span>Panna Cotta</span> – 159.99</p>
+      <p class="menu-item"><span>Gelato Italiano</span> – 139.99</p>
+      <p class="menu-item"><span>Cannoli Siciliani</span> – 159.99</p>
+    </div>
+
+    <div class="menu-category">
+      <h3>Drikkevare 🥤</h3>
+      <p class="menu-item"><span>Aperol Spritz</span> – 79.99</p>
+      <p class="menu-item"><span>Ice Tea</span> – 34.99</p>
+      <p class="menu-item"><span>Cappuccino</span> – 39.99</p>
+      <p class="menu-item"><span>Sodavand</span> – 34.99</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Om os</h2>
+    <p>Café Prego er din lokale italienske restaurant i Los Santos på <b>SunriseRP</b>. Vi serverer alt fra klassiske pizzaer til lækre pastaretter og søde desserter. Vores mål er at skabe hygge og autentisk stemning – uanset om du kommer alene eller med dine RP-venner.</p>
+  </section>
+
+  <section id="rp">
+    <h2>🌇 SunriseRP</h2>
+    <p>Du finder Café Prego på <b>SunriseRP</b> – en dansk FiveM roleplay server. Kig forbi og oplev vores restaurant ingame!</p>
+    <p><b>Server IP:</b> connect.sunriserp.dk</p>
+    <p><b>Discord:</b> <a href="https://discord.gg/sunriserp" target="_blank">Join SunriseRP Discord</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>📍 Bay City Avenue II, Los Santos</p>
+    <p>⏰ Åbningstider: 17:00 – 23:00 (RP-tider)</p>
+    <p>📞 Telefon (RP): 123-4567</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Café Prego | SunriseRP</p>
+  </footer>
+</body>
+</html>
